@@ -3,12 +3,9 @@ from src.jobs import read
 
 def get_unique_job_types(path):
     all_types_jobs = read(path)
-    my_list_types = set()
-
-    for types in all_types_jobs:
-        job_types = types["job_type"]
-        my_list_types.add(job_types)
-
+    my_list_types = {
+        my_list_types["job_type"] for my_list_types in all_types_jobs
+    }
     return my_list_types
 
 
