@@ -32,7 +32,7 @@ def get_unique_industries(path):
     my_list_industries = {
         my_list_industries['industry'] for my_list_industries in all_industries
     }
-    return my_list_industries
+    return my_list_industries.difference({''})
 
 
 def filter_by_industry(jobs, industry):
