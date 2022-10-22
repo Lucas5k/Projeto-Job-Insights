@@ -21,9 +21,9 @@ def filter_by_job_type(jobs, job_type):
 def get_unique_industries(path):
     all_industries = read(path)
     my_list_industries = {
-        my_list_industries['industry'] for my_list_industries in all_industries
+        my_list_industries["industry"] for my_list_industries in all_industries
     }
-    return my_list_industries.difference({''})
+    return my_list_industries.difference({""})
 
 
 def filter_by_industry(jobs, industry):
@@ -39,7 +39,7 @@ def get_max_salary(path):
     all_file = read(path)
     my_list_of_salary = []
     for salary in all_file:
-        if salary["max_salary"] != '' and salary["max_salary"].isdigit():
+        if salary["max_salary"] != "" and salary["max_salary"].isdigit():
             my_list_of_salary.append(salary["max_salary"])
             larger_salary = int(max(my_list_of_salary, key=int))
     return larger_salary
@@ -49,7 +49,7 @@ def get_min_salary(path):
     all_file = read(path)
     my_list_of_salary = []
     for salary in all_file:
-        if salary["min_salary"] != '' and salary["min_salary"].isdigit():
+        if salary["min_salary"] != "" and salary["min_salary"].isdigit():
             my_list_of_salary.append(salary["min_salary"])
             salary_smaller = int(min(my_list_of_salary, key=int))
     return salary_smaller
@@ -57,30 +57,24 @@ def get_min_salary(path):
 
 def matches_salary_range(job, salary):
     if type(salary) != int:
-        raise(ValueError)
-    if 'min_salary' not in job or 'max_salary' not in job:
-        raise(ValueError)
-    if type(job['max_salary']) != int or type(job['min_salary']) != int:
-        raise(ValueError)
-    if (job['max_salary'] < job['min_salary']):
-        raise(ValueError)
+        raise (ValueError)
+    if "min_salary" not in job or "max_salary" not in job:
+        raise (ValueError)
+    if type(job["max_salary"]) != int or type(job["min_salary"]) != int:
+        raise (ValueError)
+    if job["max_salary"] < job["min_salary"]:
+        raise (ValueError)
 
-    return job['min_salary'] <= salary <= job['max_salary']
+    return job["min_salary"] <= salary <= job["max_salary"]
 
 
 def filter_by_salary_range(jobs, salary):
-    """Filters a list of jobs by salary range
+    my_list = list()
+    for job in jobs:
+        try:
+            if matches_salary_range(job, salary):
+                my_list.append(job)
+        except ValueError:
+            pass
 
-    Parameters
-    ----------
-    jobs : list
-        The jobs to be filtered
-    salary : int
-        The salary to be used as filter
-
-    Returns
-    -------
-    list
-        Jobs whose salary range contains `salary`
-    """
-    return []
+    return my_list
