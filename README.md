@@ -4,7 +4,7 @@
 <p>Esse foi o meu primeiro projeto no módulo de Ciência da Computação. Neste projeto eu implementei análises a partir de um conjunto de dados sobre empregos. Minhas implementações foram incorporadas a um aplicativo Web desenvolvido com Flask (um framework web muito popular na comunidade Python). Eu tive a oportunidade de escrever testes para a implementação de uma análise de dados. Os dados foram extraídos do site Glassdoor(Disponibilizado pela Trybe) e obtidos através do Kaggle, uma plataforma disponiblizando conjuntos de dados para cientistas de dados.</p>
 
 ## :books: Funcionalidades
-* <b>Funcionalidade 1</b>: Gera relatórios Simples ou Completo;
+* <b>Funcionalidade 1</b>: Realizar a manipulação de arquivos, sobre vagas de emprego;
 
 ## :wrench: Tecnologias utilizadas
 * Python
