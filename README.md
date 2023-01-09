@@ -6,7 +6,7 @@
 ## :books: Funcionalidades
 <ol><b>Funcionalidade 1</b>: Realizar a manipulação de arquivos, sobre vagas de emprego;</ol>
 
-## :wrench: <h3>Tecnologias utilizadas</h3>
+## <h3>:wrench: Tecnologias utilizadas</h3>
 * Python
 * Pytest
 
